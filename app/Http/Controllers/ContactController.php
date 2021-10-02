@@ -24,7 +24,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contacts.create');
     }
 
     /**
@@ -34,8 +34,20 @@ class ContactController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {        
+        $request->validate([
+            'naam' => 'required',
+            'adres' => 'required',
+            'postcode' => 'required',
+            'gemeente' => 'required',
+            'email' => 'required',
+            'telefoon' => 'required',
+        ]);
+
+        Contact::create($request->all());
+
+        return redirect()->route('contacts.index')
+                        ->with('success','Nieuw contact werd succesvol aangemaakt.');
     }
 
     /**

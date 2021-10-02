@@ -1,8 +1,8 @@
 @extends('contacts.layout')
 
-@section('title', 'Contact detail')
+@section('title', 'Detail')
 
-@section('content')
+@section('contacts-content')
 <div class="row">
     <div class="col-lg-12">
         <div class="float-left">

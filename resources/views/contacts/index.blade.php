@@ -1,8 +1,8 @@
 @extends('contacts.layout')
 
-@section('title', 'List')
+@section('title', 'Overzicht')
 
-@section('content')
+@section('contacts-content')
 <div class="row">
     <div class="col-lg-12">
         <div class="float-left">
@@ -37,7 +37,7 @@
         <td>
             <form action="{{ route('contacts.destroy',$contact->id) }}" method="POST">
                 <a class="btn btn-info" href="{{ route('contacts.show',$contact->id) }}" title="Contact details">
-                    <span class="material-icons">view_list</span>
+                    <span class="material-icons">source</span>
                 </a>
                 <a class="btn btn-primary" href="{{ route('contacts.edit',$contact->id) }}" title="Contact bijwerken">
                     <span class="material-icons">edit</span>

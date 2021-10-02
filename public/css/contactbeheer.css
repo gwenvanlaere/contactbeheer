@@ -18,3 +18,9 @@ body {
 .table th {
     padding: 0.75rem;
 }
+.table td:last-child,
+.table th:last-child {
+    text-align: center;
+    background: #e7e7e7;
+    border: 1px solid white;
+}

@@ -1,8 +1,8 @@
 @extends('contacts.layout')
 
-@section('title', 'Create')
+@section('title', 'Aanmaken')
 
-@section('content')
+@section('contacts-content')
 
 <div class="row">
     <div class="col-lg-12 margin-tb">

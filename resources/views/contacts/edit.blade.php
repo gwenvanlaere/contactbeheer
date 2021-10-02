@@ -1,8 +1,8 @@
 @extends('contacts.layout')
 
-@section('title', 'Contact bijwerken')
+@section('title', 'Bijwerken')
 
-@section('content')
+@section('contacts-content')
 <div class="row">
     <div class="col-lg-12">
         <div class="float-left">
@@ -10,6 +10,9 @@
         </div> 
         <div class="float-right">
             <a class="btn btn-success" href="{{ route('contacts.index') }}" title="Terug naar overzicht">Terug naar overzicht</a>
+            <a class="btn btn-info" href="{{ route('contacts.show',$contact->id) }}" title="Contact details">
+                <span class="material-icons">view_list</span>
+            </a>
         </div>       
     </div>
 </div>

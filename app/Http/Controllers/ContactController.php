@@ -47,10 +47,10 @@ class ContactController extends Controller
             'telefoon' => 'required',
         ]);
 
-        Contact::create($request->all());
+        $contact = Contact::create($request->all());
 
         return redirect()->route('contacts.index')
-                        ->with('success','Nieuw contact werd succesvol aangemaakt.');
+                        ->with('success','Contact (ID: '. $contact->id .') werd aangemaakt.');
     }
 
     /**
@@ -96,7 +96,7 @@ class ContactController extends Controller
         $contact->update($request->all());
 
         return redirect()->route('contacts.index')
-                        ->with('success','Nieuw contact werd succesvol bijgewerkt.');
+                        ->with('success','Contact (ID: '. $contact->id .') werd bijgewerkt.');
     }
 
     /**
@@ -106,7 +106,9 @@ class ContactController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Contact $contact)
-    {
-        //
+    {            
+        $contact->delete();
+        return redirect()->route('contacts.index')
+                        ->with('success','Contact (ID:'. $contact->id .') werd verwijderd.');
     }
 }

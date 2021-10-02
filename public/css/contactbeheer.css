@@ -1,0 +1,10 @@
+/* general styles */
+body {
+    background: rgb(243 242 240);
+}
+
+.material-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

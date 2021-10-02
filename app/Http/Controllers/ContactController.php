@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contacts = Contact::latest()->paginate(5);
+        $contacts = Contact::latest()->paginate(10);
 
         return view('contacts.index',compact('contacts'))
             ->with(request()->input('page'));
@@ -61,7 +61,7 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        return view('contacts.show', compact('contact'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        return view('contacts.edit', compact('contact'));
     }
 
     /**
@@ -84,7 +84,19 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        //
+        $request->validate([
+            'naam' => 'required',
+            'adres' => 'required',
+            'postcode' => 'required',
+            'gemeente' => 'required',
+            'email' => 'required',
+            'telefoon' => 'required',
+        ]);
+
+        $contact->update($request->all());
+
+        return redirect()->route('contacts.index')
+                        ->with('success','Nieuw contact werd succesvol bijgewerkt.');
     }
 
     /**

@@ -19,7 +19,10 @@
         <title>Contactbeheer - @yield('title')</title>
     </head>
     <body>
-        <h1 class="text-center">Contactbeheer</h1>
-        <main class="container">@yield('content')</main>
+        <h1 class="text-center">CONTACTBEHEER</h1>
+        <br>
+        <main class="container">
+            @yield('content')
+        </main>
     </body>
 </html>
